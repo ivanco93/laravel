@@ -20,10 +20,15 @@ Route::get('prueba',function(){
     return 'Hola desde web.php';
 });
 
-Route::get('nombre/{nombre}',function($nombre){
-    return 'Mi nombre es ' . $nombre;
-});
-
 Route::get('edad/{edad?}',function($edad = 24){
     return 'Mi edad es ' . $edad;
 });
+
+Route::get('controlador','PruebaController@index');
+Route::get('name/{nombre}','PruebaController@nombre');
+
+
+/*
+ * Resources 
+ */
+Route::resource('movie', 'MovieController');
